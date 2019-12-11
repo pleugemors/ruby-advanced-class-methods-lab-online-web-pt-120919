@@ -10,4 +10,27 @@ class Song
     self.class.all << self
   end
 
+  def self.create
+    song = self.new 
+    song.save 
+    song 
+  end
+  
+  def self.new_by_name(song_name)
+    song = Song.new
+    song.name= song_name
+    10.times{puts song.name}
+    song 
+  end
+  
+  def self.create_by_name(song_name)
+    song = Song.new_by_name(song_name)
+    20.times{puts song.name}
+    song.save 
+  end
+  
+  def self.find_by_name(song_name)
+    found = @@all.find{|song| song == song_name}
+  end
+
 end
