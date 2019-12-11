@@ -19,14 +19,13 @@ class Song
   def self.new_by_name(song_name)
     song = Song.new
     song.name= song_name
-    10.times{puts song.name}
     song 
   end
   
   def self.create_by_name(song_name)
     song = Song.new_by_name(song_name)
-    20.times{puts song.name}
     song.save 
+    song 
   end
   
   def self.find_by_name(song_name)
